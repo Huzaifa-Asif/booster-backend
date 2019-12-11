@@ -18,7 +18,7 @@ app.use(
   })
 )
 
-// view engine setup
+//view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 app.use(logger('dev'));
@@ -35,10 +35,6 @@ mongoose.connect(mongoDB, { useNewUrlParser: true }).then(() => console.log('Mon
 .catch(err => console.log(err));
 
 
-var Users = require('./routes/Users')
-var ordRouter = require('./routes/Orders');
-var contentcreatorsRouter = require('./routes/ContentCreators');
-
 
 // routes call
 app.get('/', (req, res) => {
@@ -47,6 +43,9 @@ app.get('/', (req, res) => {
 })
 });
 
+var Users = require('./routes/Users')
+var ordRouter = require('./routes/Orders');
+var contentcreatorsRouter = require('./routes/ContentCreators');
 
 app.use('/users', Users)
 app.use('/orders',ordRouter)
