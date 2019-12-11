@@ -39,6 +39,15 @@ var Users = require('./routes/Users')
 var ordRouter = require('./routes/Orders');
 var contentcreatorsRouter = require('./routes/ContentCreators');
 
+
+// routes call
+app.get('/', (req, res) => {
+  res.json({
+    message: "Welcome to Booster Backend"
+})
+});
+
+
 app.use('/users', Users)
 app.use('/orders',ordRouter)
 app.use('/contentcreators',contentcreatorsRouter)
