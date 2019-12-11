@@ -1,22 +1,10 @@
 {
-  "name": "nodejs-mysql-authentication",
-  "version": "1.0.0",
-  "description": "nodejs login with jwt token",
-  "main": "server.js",
+  "name": "project",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "start": "node server.js",
-    "test": "node server.js",
-    "dev": "nodemon server.js"
-    
+    "start": "node server.js"    
   },
-  "keywords": [
-    "nodejs",
-    "jwt",
-    "passport",
-    "express"
-  ],
-  "author": "Rana Najam ul Hassan",
-  "license": "ISC",
   "dependencies": {
     "bcrypt": "^3.0.0",
     "body-parser": "^1.17.2",
@@ -36,6 +24,5 @@
     "nodemailer-smtp-transport": "^2.7.4",
     "nodemon": "^1.19.4",
     "react-async-script-loader": "^0.3.0"
-  },
-  "devDependencies": {}
+  }
 }
