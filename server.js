@@ -8,7 +8,6 @@ var cors = require('cors')
 var bodyParser = require('body-parser')
 var app = express()
 const mongoose = require('mongoose')
-var port =  5000
 
 app.use(bodyParser.json())
 app.use(cors())
@@ -51,8 +50,8 @@ app.use('/users', Users)
 app.use('/orders',ordRouter)
 app.use('/contentcreators',contentcreatorsRouter)
 
-app.listen(process.env.PORT || port, function() {
-  console.log('Server is running on port: ' + port)
+app.listen(process.env.PORT || '3300', function() {
+  console.log('Server is running on port: ' + 3300)
 })
 
 // catch 404 and forward to error handler
