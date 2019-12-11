@@ -8,6 +8,9 @@ var cors = require('cors')
 var bodyParser = require('body-parser')
 var app = express()
 const mongoose = require('mongoose')
+var http = require('http');
+
+var port = normalizePort(process.env.PORT || '3300');
 
 app.use(bodyParser.json())
 app.use(cors())
@@ -50,7 +53,7 @@ app.use('/users', Users)
 app.use('/orders',ordRouter)
 app.use('/contentcreators',contentcreatorsRouter)
 
-app.listen(process.env.PORT || '3300', function() {
+app.listen(port, function() {
   console.log('Server is running on port: ' + 3300)
 })
 
@@ -69,3 +72,20 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
